@@ -1,0 +1,26 @@
+{
+  "name": "surfline",
+  "version": "1.0.0",
+  "description": "just a test!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node webpack/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmeluski/surfline.git"
+  },
+  "author": "Gregg!",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmeluski/surfline/issues"
+  },
+  "homepage": "https://github.com/gmeluski/surfline",
+  "devDependencies": {
+    "babel-core": "^6.6.4",
+    "babel-loader": "^6.2.4",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
