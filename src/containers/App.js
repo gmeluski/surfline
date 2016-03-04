@@ -1,4 +1,6 @@
 import React, {Component} from "react"
+import {connect} from 'react-redux';
+
 
 class App extends Component {
   constructor(props) {
@@ -6,10 +8,16 @@ class App extends Component {
   }
 
   render() {
+    let {children} = this.props
     return (
-      <div>haha I work</div>
+      <div>
+        <div className="container">
+          {children}
+        </div>
+        haha I work
+      </div>
     )
   }
 }
 
-export default App
+export default connect(state => ({routerState: state.router, example: state.example }))(App)
