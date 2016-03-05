@@ -5,10 +5,9 @@ var apiPort = 3000
 
 var express = require('express')
 var api = express()
+var routes = require('./routes')
 
-api.get('/api', function(req, res){
-  res.send('hello sad');
-});
+api.get('/api', routes.buoys)
 
 api.listen(apiPort, function () {
   console.log('Server running on port ' + apiPort);
