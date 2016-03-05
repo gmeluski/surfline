@@ -14,7 +14,6 @@ class App extends Component {
         <div className="container">
           {children}
         </div>
-        haha I work
       </div>
     )
   }
