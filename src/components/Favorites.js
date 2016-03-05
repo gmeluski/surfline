@@ -9,10 +9,21 @@ class Favorites extends Component {
   }
 
   render() {
+    const {favorites, data, dispatch} = this.props
+
+    let display = favorites.map((favorite) => {
+      return <div>{favorite}</div>
+
+    })
     return (
-      <div>what</div>
+      <div>
+        {display}
+      </div>
     )
   }
 }
 
-export default Favorites
+export default connect(state=>({
+  data: state.example.data,
+  favorites: state.example.favorites
+}))(Favorites)
