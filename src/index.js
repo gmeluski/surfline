@@ -6,6 +6,7 @@ import {ReduxRouter} from "redux-react-router"
 import {Route} from "react-router"
 import App from "./containers/App"
 import Home from "./components/Home"
+import Favorites from "./components/Favorites"
 import {fetchData} from "./actions/actions"
 
 const store = configureStore()
@@ -20,6 +21,7 @@ ReactDOM.render(
     <ReduxRouter>
       <Route component={App}>
         <Route path="/" component={Home} onEnter={loadData} />
+        <Route path="/favorites" component={Favorites} />
       </Route>
     </ReduxRouter>
   </Provider>,
