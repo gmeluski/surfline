@@ -3,6 +3,7 @@ import {connect} from "react-redux"
 import { bindActionCreators } from 'redux'
 import * as Actions from "../actions/actions"
 import Station from "./Station.js"
+import _ from "lodash"
 
 
 class Home extends Component {
@@ -14,9 +15,9 @@ class Home extends Component {
     const {favorites, data, dispatch} = this.props
     const actions = bindActionCreators(Actions, dispatch)
     let stations = data.map((station, i)=>{
-      let isFavorite = (favorites.indexOf(station.guid) > -1 )
+      let isFavorite = _.find(favorites, {guid: station.guid})
       return <Station addFavorite={actions.addFavorite}
-        isFavorite={isFavorite}
+        isFavorite={isFavorite} info={station}
         title={station.title} guid={station.guid} key={i} / >
     })
 

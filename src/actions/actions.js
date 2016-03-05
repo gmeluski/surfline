@@ -19,10 +19,10 @@ function receiveError(json) {
   }
 }
 
-export function addFavorite(guid) {
+export function addFavorite(info) {
   return {
     type: types.ADD_FAVORITE,
-    guid
+    info
   }
 }
 

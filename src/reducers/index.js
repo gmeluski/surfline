@@ -1,6 +1,7 @@
 import * as types from "../actions/actionTypes"
 import {combineReducers} from "redux"
 import {routerStateReducer} from "redux-react-router"
+import _ from "lodash"
 
 function exampleReducer(state = {isLoading: false, data: [], error: false, favorites: [], updated: new Date()}, action = null) {
   switch (action.type) {
@@ -14,11 +15,11 @@ function exampleReducer(state = {isLoading: false, data: [], error: false, favor
       return Object.assign({}, state,
         {isLoading: true, error: false})
     case types.ADD_FAVORITE:
-      if (state.favorites.indexOf(action.guid) === -1) {
+      if (!_.find(state.favorites, {guid: action.info.guid})) {
         return Object.assign({}, state, {
           favorites: [
             ...state.favorites,
-            action.guid
+            action.info
           ]
         })
       }

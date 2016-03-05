@@ -3,7 +3,7 @@ import FavoriteButton from "./FavoriteButton"
 
 class Station extends Component {
   handleClick() {
-    this.props.addFavorite(this.props.guid)
+    this.props.addFavorite(this.props.info)
   }
 
   render() {

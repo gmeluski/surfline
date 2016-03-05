@@ -12,7 +12,7 @@ class Favorites extends Component {
     const {favorites, data, dispatch} = this.props
 
     let display = favorites.map((favorite) => {
-      return <div>{favorite}</div>
+      return <div>{favorite.title}</div>
 
     })
     return (
