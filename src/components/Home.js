@@ -1,5 +1,9 @@
 import React, {Component} from "react"
 import {connect} from "react-redux"
+import { bindActionCreators } from 'redux'
+import * as Actions from "../actions/actions"
+import Station from "./Station.js"
+
 
 class Home extends Component {
   constructor(props) {
@@ -7,9 +11,11 @@ class Home extends Component {
   }
 
   render() {
-    const {data} = this.props;
+    const {favorites, data, dispatch} = this.props
+    const actions = bindActionCreators(Actions, dispatch)
     let stations = data.map((station, i)=>{
-      return <div key={i}>{station.title}</div>
+      return <Station addFavorite={actions.addFavorite}
+        title={station.title} guid={station.guid} key={i} / >
     })
 
     return (
@@ -20,4 +26,7 @@ class Home extends Component {
   }
 }
 
-export default connect(state => ({data: state.example.data}))(Home)
+export default connect(state => ({
+  data: state.example.data,
+  favorites: state.example.favorites
+}))(Home)

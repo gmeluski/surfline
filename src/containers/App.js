@@ -19,4 +19,7 @@ class App extends Component {
   }
 }
 
-export default connect(state => ({routerState: state.router, example: state.example }))(App)
+export default connect(state => ({
+  routerState: state.router,
+  example: state.example
+}))(App)

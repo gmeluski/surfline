@@ -19,6 +19,13 @@ function receiveError(json) {
   }
 }
 
+export function addFavorite(guid) {
+  return {
+    type: types.ADD_FAVORITE,
+    guid
+  }
+}
+
 export function fetchData(url) {
   return function (dispatch) {
     dispatch(requestData)
