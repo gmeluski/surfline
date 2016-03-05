@@ -2,7 +2,7 @@ import * as types from "../actions/actionTypes"
 import {combineReducers} from "redux"
 import {routerStateReducer} from "redux-react-router"
 
-function exampleReducer(state = {isLoading: false, data: [], error: false, favorites: []}, action = null) {
+function exampleReducer(state = {isLoading: false, data: [], error: false, favorites: [], updated: new Date()}, action = null) {
   switch (action.type) {
     case types.RECV_ERROR:
       return Object.assign({}, state,
@@ -14,12 +14,15 @@ function exampleReducer(state = {isLoading: false, data: [], error: false, favor
       return Object.assign({}, state,
         {isLoading: true, error: false})
     case types.ADD_FAVORITE:
-      let newFavorites = state.favorites.slice()
-      if (newFavorites.indexOf(action.guid) === -1) {
-        newFavorites.push(action.guid)
+      if (state.favorites.indexOf(action.guid) === -1) {
+        return Object.assign({}, state, {
+          favorites: [
+            ...state.favorites,
+            action.guid
+          ]
+        })
       }
-
-      return Object.assign({}, state, {favorites: newFavorites})
+      return state
     default:
       return state
   }
