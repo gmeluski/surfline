@@ -28,7 +28,6 @@ export function fetchData(url) {
       method: "get",
       responseType: "json"
      }).then((response)=> {
-        console.log(response)
         dispatch(receiveData(response.data))
      }).catch((error)=>{
         dispatch((receiveError(error.data)))

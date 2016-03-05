@@ -8,9 +8,14 @@ class Home extends Component {
 
   render() {
     const {data} = this.props;
-    console.log(data)
+    let stations = data.map((station, i)=>{
+      return <div key={i}>{station.title}</div>
+    })
+
     return (
-      <div>Hey guys</div>
+      <div>
+        {stations}
+      </div>
     )
   }
 }

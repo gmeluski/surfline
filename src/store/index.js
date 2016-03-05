@@ -11,7 +11,6 @@ const createAppStore = compose(
 
 export default function configureStore(initialState) {
   const store = createAppStore(rootReducer, initialState)
-  console.log(store)
 
   return store
 }

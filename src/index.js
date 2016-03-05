@@ -9,7 +9,7 @@ import Home from "./components/Home"
 import {fetchData} from "./actions/actions"
 
 const store = configureStore()
-let url = "https://restcountries.eu/rest/v1/all"
+let url = "http://localhost:8080/api"
 
 function loadData() {
   store.dispatch(fetchData(url))
