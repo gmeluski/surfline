@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import FavoriteButton from "./FavoriteButton"
 
 class Station extends Component {
   handleClick() {
@@ -10,6 +11,7 @@ class Station extends Component {
     return (
       <div onClick={this.handleClick.bind(this)}>
         {title}
+        <FavoriteButton isFavorite={this.props.isFavorite} />
       </div>
     )
   }

@@ -14,7 +14,9 @@ class Home extends Component {
     const {favorites, data, dispatch} = this.props
     const actions = bindActionCreators(Actions, dispatch)
     let stations = data.map((station, i)=>{
+      let isFavorite = (favorites.indexOf(station.guid) > -1 )
       return <Station addFavorite={actions.addFavorite}
+        isFavorite={isFavorite}
         title={station.title} guid={station.guid} key={i} / >
     })
 
