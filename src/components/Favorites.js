@@ -11,8 +11,16 @@ class Favorites extends Component {
   render() {
     const {favorites, data, dispatch} = this.props
 
+    console.log(favorites)
     let display = favorites.map((favorite) => {
-      return <div>{favorite.title}</div>
+      let latLong = favorite["georss:point"]["#"]
+      return (
+        <div>
+          <span>{favorite.guid}</span>
+          <span>{favorite.title}</span>
+          <span>{latLong}</span>
+        </div>
+      )
 
     })
     return (
