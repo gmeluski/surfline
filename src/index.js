@@ -18,9 +18,8 @@ ReactDOM.render(
   <Provider store={store}>
     <ReduxRouter>
       <Route history={browserHistory}>
-        <Route component={App}>
-          <Route path="/" component={Home}
-            onEnter={hooks.loadData(store)(url)} />
+        <Route component={App} onEnter={hooks.loadData(store)(url)}>
+          <Route path="/" component={Home} />
           <Route path="/favorites" component={Favorites} />
         </Route>
       </Route>
