@@ -11,13 +11,12 @@ class Favorites extends Component {
 
   render() {
     const {favorites, data, dispatch} = this.props
-
-    let display = favorites.map((favorite, i) => {
+    let display = (favorites.length > 0) ? favorites.map((favorite, i) => {
       return (
         <Favorite key={i} favorite={favorite} />
       )
+    }) : "No favorites yet!"
 
-    })
     return (
       <div>
         {display}
