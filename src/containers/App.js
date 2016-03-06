@@ -10,9 +10,9 @@ class App extends Component {
   render() {
     let {children} = this.props
     return (
-      <div>
+      <div className="container">
         <NavBar />
-        <div className="container">
+        <div>
           {children}
         </div>
       </div>

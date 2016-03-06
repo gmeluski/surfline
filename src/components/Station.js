@@ -9,9 +9,13 @@ class Station extends Component {
   render() {
     const {title} = this.props
     return (
-      <div onClick={this.handleClick.bind(this)}>
-        {title}
-        <FavoriteButton isFavorite={this.props.isFavorite} />
+      <div className="row" onClick={this.handleClick.bind(this)}>
+        <div className="one columns">
+          <FavoriteButton isFavorite={this.props.isFavorite} />
+        </div>
+        <div className="eleven columns">
+          {title}
+        </div>
       </div>
     )
   }
