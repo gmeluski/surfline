@@ -12,9 +12,9 @@ class Favorites extends Component {
   render() {
     const {favorites, data, dispatch} = this.props
 
-    let display = favorites.map((favorite) => {
+    let display = favorites.map((favorite, i) => {
       return (
-        <Favorite favorite={favorite} />
+        <Favorite key={i} favorite={favorite} />
       )
 
     })

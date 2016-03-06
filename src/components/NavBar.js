@@ -10,8 +10,8 @@ class NavBar extends Component {
   render() {
     return (
       <nav>
-        <Link to="/">Buoys</Link>
-        <Link to="/favorites">Favorites</Link>
+        <Link className="button" to="/">Buoys</Link>
+        <Link className="button" to="/favorites">Favorites</Link>
       </nav>
     )
   }

@@ -9,6 +9,7 @@ import Home from "./components/Home"
 import Favorites from "./components/Favorites"
 import {fetchData} from "./actions/actions"
 import * as hooks from './hooks'
+import { browserHistory } from "react-router"
 
 const store = configureStore()
 let url = "http://localhost:8080/api"
@@ -16,10 +17,12 @@ let url = "http://localhost:8080/api"
 ReactDOM.render(
   <Provider store={store}>
     <ReduxRouter>
-      <Route component={App}>
-        <Route path="/" component={Home}
-          onEnter={hooks.loadData(store)(url)} />
-        <Route path="/favorites" component={Favorites} />
+      <Route history={browserHistory}>
+        <Route component={App}>
+          <Route path="/" component={Home}
+            onEnter={hooks.loadData(store)(url)} />
+          <Route path="/favorites" component={Favorites} />
+        </Route>
       </Route>
     </ReduxRouter>
   </Provider>,
