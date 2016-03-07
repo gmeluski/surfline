@@ -10,7 +10,7 @@ module.exports = {
       "webpack/hot/only-dev-server",
       "./index.js"
     ],
-    vendors: ["react", "redux", "react-redux"]
+    vendors: ["react", "redux", "react-redux", "redux-react-router"]
   },
   output: {
     path: path.join(__dirname, "..", "dist"),
