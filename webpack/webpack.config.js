@@ -24,7 +24,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ["react-hot",
+        loaders: ["react-hot-loader",
           "babel-loader?presets[]=react,presets[]=es2015"],
         exclude: /(node_modules|test)/,
         include: path.join(__dirname, "..", "src")
