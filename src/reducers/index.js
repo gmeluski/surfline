@@ -3,7 +3,7 @@ import {combineReducers} from "redux"
 import {routerStateReducer} from "redux-react-router"
 import _ from "lodash"
 
-function exampleReducer(state = {isLoading: false, data: [], error: false, favorites: [], updated: new Date()}, action = null) {
+function exampleReducer(state = {isLoading: false, data: [], error: false, favorites: []}, action = null) {
   switch (action.type) {
     case types.RECV_ERROR:
       return Object.assign({}, state,
